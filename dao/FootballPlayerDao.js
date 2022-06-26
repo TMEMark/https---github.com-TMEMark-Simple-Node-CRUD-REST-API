@@ -2,6 +2,11 @@ import {v4 as uuid} from 'uuid';
 
 let players = [];
 
+/**
+ * Const that gets all players from array
+ * @param {*} req - null or undefined
+ * @param {*} res - Response that gets players from server if everything is fine
+ */
 export const getPlayers = (req, res) => {
     try{
         console.log("Getting players...");
@@ -12,6 +17,11 @@ export const getPlayers = (req, res) => {
     
 }
 
+/**
+ * Const that gets player with given id
+ * @param {*} req - unique player identifier {id}
+ * @param {*} res - Response that gets player with unique {id} from server if everything is fine
+ */
 export const getPlayer = (req, res) => {
     try{
         const { id } = req.params;
@@ -24,7 +34,11 @@ export const getPlayer = (req, res) => {
    
 };
 
-
+/**
+ * Const that creates a new player with the given data
+ * @param {*} req - Given player data
+ * @param {*} res - Response that gets player {player.firstName} that was inserted if everything is fine
+ */
 export const createPlayer = (req, res) => {   
     const player = req.body;
     try {
@@ -38,7 +52,11 @@ export const createPlayer = (req, res) => {
     
 };
 
-
+/**
+ * Const that deletes player with given id 
+ * @param {*} req - Given unique id
+ * @param {*} res - Response that gets ${id} of deleted player if everything is fine
+ */
 export const deletePlayer = (req, res) => { 
     try {
         const { id } = req.params;
@@ -51,6 +69,11 @@ export const deletePlayer = (req, res) => {
     
 };
 
+/**
+ * Const that updates player with given data
+ * @param {*} req - Given unique id
+ * @param {*} res - Response that gets ${id} of updated player if everything is fine
+ */
 export const updatePlayer =  (req,res) => {
     const {id} = req.params;
     const {firstName, lastName, age} = req.body;
